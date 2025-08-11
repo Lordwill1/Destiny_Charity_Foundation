@@ -9,8 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <!----Impact section Lib-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="impactstyle.css">
 </head>
 <body>
+    
     <!-- Navigation -->
 
     <nav class="navbar">
@@ -30,6 +36,10 @@
             </button>
         </div>
     </nav>
+
+    <!-------------- Impact section Js Libery ----------------------------->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="impactsection.js"></script>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -99,19 +109,6 @@
         </div>
     </div>
 </section>
-
-<!---------------------------------Text Animation----------------------------------->>
-
-<div align="center">
-    <img class="typing-svg" src="https://readme-typing-svg.demolab.com?lines=
-    HEY!+We+can+make+the+world+a+better+place;
-    One+donation+at+a+time;
-    Hope+starts+with+you;
-    Make+someone+smile+today;
-    No+one+should+go+to+bed+hungry;
-    Your+Donation+can+fill+a+plate+tonight;
-    &color=10B981&size=24&duration=3000&center=true" alt="Typing Animation">
-</div>
 
 <script>
 
@@ -266,6 +263,51 @@
             </div>
         </div>
     </section>
+
+    <!----------------------------------- Impact Section ---------------------------------->
+
+    <section class="impact-section">
+    <div class="pulse"></div>
+    
+    <div class="section-header">
+        <h2>Your Donation Makes a Difference</h2>
+        <p>Every contribution helps us create meaningful change in communities around the world. See the impact we've made together:</p>
+    </div>
+    
+    <div class="stats-grid">
+        <div class="stat-card">
+            <i class="fas fa-child stat-icon"></i>
+            <div class="stat-value" id="children-count">0</div>
+            <div class="stat-label">Children Helped</div>
+            <div class="stat-description">Providing education, nutrition, and healthcare to vulnerable children in underserved communities.</div>
+        </div>
+        
+        <div class="stat-card">
+            <i class="fas fa-hands-helping stat-icon"></i>
+            <div class="stat-value" id="communities-count">0</div>
+            <div class="stat-label">Communities Supported</div>
+            <div class="stat-description">Empowering communities with sustainable solutions for long-term development and growth.</div>
+        </div>
+        
+        <div class="stat-card">
+            <i class="fas fa-globe-americas stat-icon"></i>
+            <div class="stat-value" id="countries-count">0</div>
+            <div class="stat-label">Countries Reached</div>
+            <div class="stat-description">Expanding our humanitarian efforts across continents to address global challenges.</div>
+        </div>
+    </div>
+    
+    <div class="impact-chart">
+        <div class="chart-container">
+            <canvas id="impactChart"></canvas>
+        </div>
+    </div>
+    
+<div class="cta-container">
+    <a href="/contact.html" class="cta-button">Join Our Mission Today</a>
+</div>
+
+</section>
 
     <!-- CTA Section -->
     <section class="cta-section">

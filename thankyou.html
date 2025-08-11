@@ -2,75 +2,336 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Charity Jet | Thank You</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destiny Toby Charity Foundation | Thank You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10B981',
+                        secondary: '#059669',
+                        dark: '#0F172A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'checkmark-circle': 'checkmarkCircle 0.6s ease-in-out both',
+                        'checkmark-stroke': 'checkmarkStroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) 0.6s both'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        checkmarkCircle: {
+                            '0%': { strokeDashoffset: '166' },
+                            '100%': { strokeDashoffset: '0' }
+                        },
+                        checkmarkStroke: {
+                            '0%': { strokeDashoffset: '48' },
+                            '100%': { strokeDashoffset: '0' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        .thankyou-hero-bg {
+            background-image: url('images/donate_back.jpg');
+        }
+        .btn-hover-effect {
+            transition: all 0.3s ease;
+        }
+        .btn-hover-effect:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 4;
+            stroke: #10B981;
+            stroke-miterlimit: 10;
+            margin: 0 auto;
+            box-shadow: 0 0 0 rgba(16, 185, 129, 0.4);
+            animation: checkmark-circle 0.6s ease-in-out both;
+        }
+        .checkmark__circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 4;
+            stroke-miterlimit: 10;
+            stroke: #10B981;
+            fill: none;
+            animation: checkmark-circle 0.6s cubic-bezier(0.65, 0, 0.45, 1) both;
+        }
+        .checkmark__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: checkmarkStroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) 0.6s both;
+        }
+    </style>
 </head>
-<body>
-    <!-- ----------------------------------------NAVBAR----------------------------------------------------->
-    <nav class="nav nav_top">
-        <div class="logo">
-            <a href="index.html"><img src="images/logo.png" width="250"></a>
-        </div>
-        <div class="nav_side">
-            <a href="index.html">HOME</a>
-            <a href="about.html">ABOUT US</a>
-            <a href="donate.html">DONATE</a>
-            <a href="contact.html">CONTACT</a>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-dark bg-opacity-90 z-50 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html">
+                        <img class="h-12" src="images/logo.png" alt="Charity Jet">
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="text-white hover:text-primary font-medium transition">HOME</a>
+                        <a href="about.html" class="text-white hover:text-primary font-medium transition">ABOUT US</a>
+                        <a href="donate.html" class="text-white hover:text-primary font-medium transition">DONATE</a>
+                        <a href="contact.html" class="text-white hover:text-primary font-medium transition">CONTACT</a>
+                        <a href="donate.html" class="ml-6 bg-primary hover:bg-secondary text-white px-6 py-2 rounded-full font-medium transition btn-hover-effect">
+                            DONATE NOW
+                        </a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
-    <!-- --------------------------------------------DONATE----------------------------------------------------->
-    <div class="donate">
-        <div class="donate_container">
-            <h1>THANK YOU!</h1>
-            <p>The greatest use of a life is to spend it on something that will outlast it.</p>
-            <p class="second">Your contribution for<br>the needy children worldwide<br> is priceless. Thank You for your bringing a change!</p>
-            <div class="side_btn">
-                <a href="index.html">BACK TO HOME</a>
+
+    <!-- Thank You Hero Section -->
+    <section class="thankyou-hero-bg bg-cover bg-center bg-fixed pt-32 pb-20 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center animate-fade-in">
+                <!-- Animated Checkmark -->
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+                
+                <h1 class="text-4xl md:text-5xl font-bold text-white mt-8 mb-6">THANK YOU!</h1>
+                <p class="text-xl text-white opacity-90 mb-6 max-w-2xl mx-auto">
+                    The greatest use of a life is to spend it on something that will outlast it.
+                </p>
+                <p class="text-lg text-white opacity-90 max-w-2xl mx-auto">
+                    Your contribution for the needy children worldwide is priceless. Thank You for bringing a change!
+                </p>
+                
+                <div class="mt-12">
+                    <a href="index.html" class="inline-block bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-full text-lg font-semibold transition btn-hover-effect">
+                        BACK TO HOME
+                    </a>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Impact Details Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-dark mb-12">Your Donation at Work</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Food & Water</h3>
+                    <p class="text-gray-600">Your donation helps provide nutritious meals to children in need</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-book-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Education</h3>
+                    <p class="text-gray-600">Supports school programs and educational materials</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Healthcare</h3>
+                    <p class="text-gray-600">Provides medical care and vaccinations</p>
+                </div>
+            </div>
+            
+            <div class="bg-primary bg-opacity-10 p-8 rounded-xl border border-primary border-opacity-20">
+                <h3 class="text-xl font-semibold text-dark mb-4">Next Steps</h3>
+                <p class="text-gray-600 mb-6">
+                    Your donation receipt has been emailed to you. Keep an eye on your inbox for updates about how your contribution is making a difference.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-medium transition btn-hover-effect">
+                        <i class="fas fa-share-alt mr-2"></i> Share Your Impact
+                    </a>
+                    <a href="donate.html" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition btn-hover-effect">
+                        <i class="fas fa-gift mr-2"></i> Give Again
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-dark mb-12">Stories of Hope</h2>
+            
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-8">
+                <div class="text-yellow-400 text-2xl mb-4">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="text-gray-600 italic mb-6">
+                    "Because of generous donors like you, my daughter can now attend school and has hope for a better future. Thank you for changing our lives."
+                </p>
+                <div class="flex items-center justify-center">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Maria" class="h-12 w-12 rounded-full mr-4">
+                    <div class="text-left">
+                        <h4 class="font-semibold text-dark">Maria</h4>
+                        <p class="text-gray-500 text-sm">Mother from Guatemala</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="about.html" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full text-lg font-semibold transition btn-hover-effect">
+                READ MORE STORIES
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <a href="index.html">
+                        <img class="h-12 mb-6" src="images/logo.png" alt="Charity Jet">
+                    </a>
+                    <p class="text-gray-300 mb-6">
+                        Charity Jet cares for needy children by empowering their caregivers to do their best work, with compassion, grace, integrity and excellence.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/" target="_blank" class="text-gray-300 hover:text-primary transition">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="text-gray-300 hover:text-primary transition">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Navigation</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-300 hover:text-primary transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-primary transition">About</a></li>
+                        <li><a href="donate.html" class="text-gray-300 hover:text-primary transition">Donate</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-primary transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contact Us</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>4486 Richards Avenue, Modesto CA - 95354</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                            <span>200-000-0000</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>charityjet@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Support</h3>
+                    <p class="text-gray-300 mb-6">
+                        Help us shape a better future for children all over the world
+                    </p>
+                    <a href="donate.html" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-2 rounded-full font-medium transition btn-hover-effect">
+                        JOIN US TODAY
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>Copyright &copy; 2023 Charity Jet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="md:hidden fixed inset-0 bg-dark bg-opacity-95 z-40 hidden" id="mobileMenu">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="index.html" class="text-white text-2xl font-medium">HOME</a>
+            <a href="about.html" class="text-white text-2xl font-medium">ABOUT US</a>
+            <a href="donate.html" class="text-white text-2xl font-medium">DONATE</a>
+            <a href="contact.html" class="text-white text-2xl font-medium">CONTACT</a>
+            <a href="donate.html" class="mt-6 bg-primary text-white px-8 py-3 rounded-full text-xl font-semibold">
+                DONATE NOW
+            </a>
         </div>
     </div>
-    <!-- --------------------------------------------FOOTER-------------------------------------------------------->
-    <footer>
-        <div class="pages"> 
-            <a href="index.html"><img class="aimg" src="images/logo.png" width="250"></a> 
-            <p>Charity Jet cares for needy children by empowering their caregivers to do their best work, with compassion, grace, integrity and excellence. Our end goal is to support children worldwide and see every child reach the potential that God has for them.</p>
-            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        </div>
-        <div class="doc">
-            <h3>Navigation</h3>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="donate.html">Donate</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <div class="contact">
-            <h3>Contact Us</h3>
-            <a href="contact" target="_blank">4486 Richards Avenue, Modesto CA - 95354</a>
-            <a href="tel: +910000000000">200-000-0000</a>
-            <a href="mailto: ppppppp@gmail.com">charityjet@gmail.com</a>
-        </div>
-        <div class="social">
-            <h3>Support</h3>
-            <p>Help us shape a better future fot children all over the world</p>
-            <div class="side_btn">
-                <a href="donate.html">JOIN US TODAY</a>
-            </div>
-        </div>
-        <hr>
-        <p>Copyright &copy; 2021 Charity Jet. All rights reserved.</p>
-    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('nav button').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+
+        // Get URL parameters to personalize thank you message
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const donationAmount = urlParams.get('amount');
+            
+            if (donationAmount) {
+                const amountElement = document.createElement('p');
+                amountElement.className = 'text-2xl text-primary font-bold my-4';
+                amountElement.textContent = `$${donationAmount}`;
+                
+                const impactElement = document.createElement('p');
+                impactElement.className = 'text-lg text-gray-600 mb-8';
+                
+                // Calculate impact based on donation amount
+                const meals = Math.floor(donationAmount / 5);
+                const schoolDays = Math.floor(donationAmount / 20);
+                
+                impactElement.textContent = `Your donation provides approximately ${meals} meals or ${schoolDays} days of school for children in need.`;
+                
+                const thankYouContainer = document.querySelector('.thank-you-container');
+                thankYouContainer.insertBefore(amountElement, thankYouContainer.children[2]);
+                thankYouContainer.insertBefore(impactElement, thankYouContainer.children[3]);
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,151 +1,470 @@
-<!-- ---------------------------------------LINK="https://rzp.io/l/zLEJysVsC" ----------------------------------------------------->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destiny Toby Charity Foundation - Helping Children Worldwide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Charity Jet</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- ----------------------------------------NAVBAR----------------------------------------------------->
-    <nav class="nav nav_top">
-        <div class="logo">
-            <a href="index.html"><img src="images/logo.png" width="250"></a>
-        </div>
-        <div class="nav_side">
-            <a href="index.html">HOME</a>
-            <a href="about.html">ABOUT US</a>
-            <a href="donate.html">DONATE</a>
-            <a href="contact.html">CONTACT</a>
+    <!-- Navigation -->
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Destiny Toby Charity Foundation">
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="donate.html">Donate</a>
+                <a href="contact.html">Contact</a>
+                <a href="donate.html" class="donate-btn">Donate Now</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
-    <!-- --------------------------------------------MAIN----------------------------------------------------------->
-    <div class="main">
-        <div class="main_content">
-            <h2>“Giving is not just about making a donation. It is about making a difference.”
-                <br>
-                <span>Give a helping hand to children who NEED it!</span>
-            </h2>
-            <div class="btn">
-                <a href="donate.html">DONATE NOW</a>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>"Giving is not just about making a donation. It is about making a difference."</h1>
+                <p class="subtitle">Give a helping hand to children who NEED it!</p>
+                <div class="cta-buttons">
+                    <a href="donate.html" class="btn-primary">Donate Now</a>
+                    <a href="about.html" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+<!------------------------------ About Section ----------------------------------------------------->
+
+<section class="about-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image">
+                <!-- Image Gallery Container -->
+                <div class="image-gallery">
+                    <div class="gallery-slides">
+                        <img src="images/slide1.jpg" alt="Helping children" class="slide active">
+                        <img src="images/slide2.jpg" alt="Children education" class="slide">
+                        <img src="images/slide3.jpg" alt="Community support" class="slide">
+                        <img src="images/slide4.jpg" alt="Medical assistance" class="slide">
+                        <img src="images/slide5.jpg" alt="Happy children" class="slide">
+                    </div>
+                    <div class="gallery-controls">
+                        <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                        <div class="gallery-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                            <span class="dot" data-index="4"></span>
+                        </div>
+                        <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="about-content">
+                <h2>Help a Child Today</h2>
+                <p>Service to man is service to God. Destiny Toby Charity Foundation cares for needy children by empowering their caregivers to do their best work, with compassion, grace, integrity and excellence. Our end goal is to support children in Africa and see every child reach the potential that God has for them.</p>
+                <div class="impact-stats">
+                    <div class="stat">
+                        <span class="number" data-count="5000">500+</span>
+                        <span class="label">Children Helped</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number" data-count="120">15+</span>
+                        <span class="label">Communities</span>
+                    </div>
+                </div>
+                <a href="donate.html" class="btn-primary">Join Us Today</a>
             </div>
         </div>
     </div>
-    <!-- --------------------------------------------SIDE----------------------------------------------------------->
-    <div class="side">
-        <div class="left">
-            <img src="images/side.jpg">
-        </div>
-        <div class="right">
-            <h2>HELP A CHILD TODAY</h2>
-            <p>
-                Service to man is service to God. Charity Jet cares for needy children by empowering their caregivers to do their best work, with compassion, grace, integrity and excellence. Our end goal is to support children worldwide and see every child reach the potential that God has for them.
-            </p>
-            <div class="side_btn">
-                <a href="donate.html">JOIN US TODAY</a>
-            </div>
-        </div>
+</section>
 
-    </div>
-    <!-- --------------------------------------------HOW WE HELP--------------------------------------------------------->
-    <div class="product">
-        <h2>HOW WE HELP</h2>
-        <div class="product_container">
 
-            <div class="item">
-                <div class="item_img">
-                    <img src="images/pro1.svg">
+
+<script>
+    // Image Gallery Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.gallery-slides .slide');
+        const dots = document.querySelectorAll('.gallery-dots .dot');
+        const prevBtn = document.querySelector('.gallery-prev');
+        const nextBtn = document.querySelector('.gallery-next');
+        let currentSlide = 0;
+        let slideInterval;
+        
+        // Initialize gallery
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        // Next slide
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // Previous slide
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // Start auto-sliding
+        function startSlideShow() {
+            slideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+        }
+        
+        // Pause auto-sliding when hovering
+        document.querySelector('.image-gallery').addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        // Resume auto-sliding when not hovering
+        document.querySelector('.image-gallery').addEventListener('mouseleave', startSlideShow);
+        
+        // Dot navigation
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-index'));
+                showSlide(slideIndex);
+            });
+        });
+        
+        // Button controls
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // Initialize
+        showSlide(0);
+        startSlideShow();
+    });
+</script>
+
+    <!------------------- Services Section ------------------------------------>
+
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">How We Help</h2>
+            <p class="section-subtitle">We provide comprehensive support to children in need around the world</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/pro1.svg" alt="Food and Water">
+                    </div>
+                    <h3>Pure Food & Water</h3>
+                    <p>We supply needy children with basic necessities like pure food and water to ensure their healthy development.</p>
                 </div>
-                <div class="item_content">
-                    <h3>Pure Food & Water</h3><br>
-                    <p>We supply needy childen with basic necessities like pure food and water</p>
-                    <br><br><br>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/pro2.svg" alt="Health and Medicine">
+                    </div>
+                    <h3>Health and Medicine</h3>
+                    <p>Health being the foremost priority, we aim at giving children every medical support they need to thrive.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/pro3.svg" alt="Education">
+                    </div>
+                    <h3>Education</h3>
+                    <p>We provide education facilities to children all over the world, giving them tools for a brighter future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Stories of Hope</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <p>"Thanks to Destiny Toby Charity Foundation, my daughter now has access to clean water and education. You've changed our lives forever."</p>
+                        <div class="testimonial-author">
+                            <img src="images/founder.jpg" alt="Charles">
+                            <div>
+                                <h4>Charles</h4>
+                                <span>Mother, Elioparanwo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The medical camp organized by Destiny Toby Charity Foundation saved my son's life. We are forever grateful for your support."</p>
+                        <div class="testimonial-author">
+                            <img src="images/founder2.jpg" alt="James">
+                            <div>
+                                <h4>Marcel Chukwudi</h4>
+                                <span>Father, Rivers State</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Because of the school supplies provided, my children can now continue their education. Thank you for this blessing."</p>
+                        <div class="testimonial-author">
+                            <img src="images/founder3.jpg" alt="Marcel Chukwudi">
+                            <div>
+                                <h4>Marcel Chukwudi</h4>
+                                <span>Mother, Imo state</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Ready to Make a Difference?</h2>
+                <p>Your donation can change a child's life today. Join us in our mission to create a better future.</p>
+                <a href="donate.html" class="btn-primary">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+<!-- Meet the team -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Team | Destiny Toby Charity Foundationt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
+</head>
+<body>
+    <section class="team-section">
+        <h2>Meet Our Team</h2>
+        <p class="subtitle">The passionate professionals who make our mission possible</p>
+        
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="images/founder.jpg" alt="Rev. Fr. Ben Ubanii">
+                    <div class="container">
+                        <h2>Rev. Fr. Ben Ubanii</h2>
+                        <p class="title">CEO & Founder</p>
+                        <p>Our mission is rooted in faith and service. At Destiny Toby Charity Foundation, I see every act of kindness as a seed for a better tomorrow.</p>
+                        <p>sarah@gmail.com</p>
+                        <p><button class="button">Contact</button></p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="item">
-                <div class="item_img">
-                    <img src="images/pro2.svg">
-                </div>
-                <div class="item_content">
-                    <h3>Health and Medicine</h3><br>
-                    <p>Health being the foremost priority, we aim at giving children every medical support</p>
-                    <br><br>
+            <div class="column">
+                <div class="card">
+                    <img src="images/founder2.jpg" alt="Ikenna Ubanii">
+                    <div class="container">
+                        <h2>Ikenna Ubanii</h2>
+                        <p class="title">Program Director</p>
+                        <p>Ikenna Ubanii oversees our global initiatives, ensuring resources reach the communities that need them most.</p>
+                        <p>michael@gmail.org</p>
+                        <p><button class="button">Contact</button></p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="item">
-                <div class="item_img">
-                    <img src="images/pro3.svg">
+            <div class="column">
+                <div class="card">
+                    <img src="images/founder3.jpg" alt="Odinakachi Emma-Osuji">
+                    <div class="container">
+                        <h2>Odinakachi Emma-Osuji</h2>
+                        <p class="title">Development Director</p>
+                        <p>Amina leads our fundraising efforts and builds partnerships to maximize our impact.</p>
+                        <p>amina@gmail.org</p>
+                        <p><button class="button">Contact</button></p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="item_content">
-                    <h3>Education</h3><br>
-                    <p>We provide education facilities to children all over the world</p>
-                    <br><br>
+            </div>
+
                 </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <!-- --------------------------------------------FOOTER-------------------------------------------------------->
-    <footer>
-        <div class="pages"> 
-            <a href="index.html"><img class="aimg" src="images/logo.png" width="250"></a> 
-            <p>Charity Jet cares for needy children by empowering their caregivers to do their best work, with compassion, grace, integrity and excellence. Our end goal is to support children worldwide and see every child reach the potential that God has for them.</p>
-            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        </div>
-        <div class="doc">
-            <h3>Navigation</h3>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="donate.html">Donate</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <div class="contact">
-            <h3>Contact Us</h3>
-            <a href="contact" target="_blank">4486 Richards Avenue, Modesto CA - 95354</a>
-            <a href="tel: +910000000000">200-000-0000</a>
-            <a href="mailto: ppppppp@gmail.com">charityjet@gmail.com</a>
-        </div>
-        <div class="social">
-            <h3>Support</h3>
-            <p>Help us shape a better future fot children all over the world</p>
-            <div class="side_btn">
-                <a href="donate.html">JOIN US TODAY</a>
+    </section>
+
+    <script>
+        // Simple script to handle button clicks
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', function() {
+                const email = this.parentElement.previousElementSibling.textContent;
+                alert(`Contacting ${email}`);
+            });
+        });
+    </script>
+</body>
+</html>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo.png" alt="Destiny Toby Charity Foundation">
+                    </a>
+                    <p>Destiny Toby Charity Foundation cares for needy children by empowering their caregivers to do their best work, with compassion, grace, integrity and excellence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 35 Ada George, Port Harcourt, Rivers State Nigeria</li>
+                        <li><i class="fas fa-phone-alt"></i> +2349150816723</li>
+                        <li><i class="fas fa-envelope"></i> info@destinytobycharity.org</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for updates on our work.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Destiny Toby Charity Foundation. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
-        <hr>
-        <p>Copyright &copy; 2021 Charity Jet. All rights reserved.</p>
     </footer>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
- <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-<script type="text/javascript">
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzmY7HJmUEupsd8UBLj-aTxEsPcKQEWFYaxFA44IcIYrYCjanY1WcTF4zyKYXFQubtbTA/exec'
-            const form = document.forms['submit-googlesheet']
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Thanks you for your valuable feedback!"))
-                .catch(error => console.error('Error!', error.message))
-            })
-          
-</script>
+    <script src="script.js"></script>
+
+    <script>
+
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Testimonial Slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.dot');
+        
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                testimonial.classList.toggle('active', i === index);
+                dots[i].classList.toggle('active', i === index);
+            });
+            currentTestimonial = index;
+        }
+        
+        function nextTestimonial() {
+            let nextIndex = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(nextIndex);
+        }
+        
+        // Auto-rotate testimonials every 5 seconds
+        let slideInterval = setInterval(nextTestimonial, 5000);
+        
+        // Manual controls
+        document.querySelector('.slider-next').addEventListener('click', () => {
+            clearInterval(slideInterval);
+            nextTestimonial();
+            slideInterval = setInterval(nextTestimonial, 5000);
+        });
+        
+        document.querySelector('.slider-prev').addEventListener('click', () => {
+            clearInterval(slideInterval);
+            let prevIndex = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(prevIndex);
+            slideInterval = setInterval(nextTestimonial, 5000);
+        });
+        
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                showTestimonial(index);
+                slideInterval = setInterval(nextTestimonial, 5000);
+            });
+        });
+    </script>
 </body>
 </html>

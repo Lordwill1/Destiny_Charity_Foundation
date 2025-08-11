@@ -1020,7 +1020,22 @@ a {
         flex-direction: column;
         gap: 15px;
     }
-    
+
+/* ---------------DISABLED WITH A COMMENT COMMAND----------
+
+/* Join us today button on index file
+.center-button {
+    display: flex;
+    justify-content: center;
+}
+
+/* To style the link directly
+.btn-primary {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+*/
     .services-grid {
         grid-template-columns: 1fr;
     }

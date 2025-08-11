@@ -102,7 +102,6 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    height: 27%;
     padding: 20px 0;
     z-index: 1000;
     transition: var(--transition);
@@ -1004,6 +1003,10 @@ a {
         clip-path: circle(1000px at 90% -10%);
         pointer-events: all;
     }
+
+    .navbar {
+        padding: 0.5px 0;
+    }
     
     .hamburger {
         display: block;
@@ -1066,10 +1069,6 @@ a {
 }
 
 /* Navigation - Mobile Styles */
-.nav-links {
-    /* Your existing styles */
-    transition: all 0.3s ease;
-}
 
 @media (max-width: 768px) {
     .nav-links {

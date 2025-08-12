@@ -1144,3 +1144,28 @@ a {
 .dot.active {
     background: #10B981;
 }
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Hide cancel button by default (desktop) */
+#cancelBtn {
+    display: none;
+}
+
+/* Show cancel button only on mobile */
+@media (max-width: 768px) {
+    #cancelBtn {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: white; /* adjust based on your menu style */
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 999;
+    }
+}

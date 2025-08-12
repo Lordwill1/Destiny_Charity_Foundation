@@ -19,27 +19,31 @@
     
     <!-- Navigation -->
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Destiny Toby Charity Foundation">
-            </a>
-            <div class="nav-links" id="navLinks">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="donate.html">Donate</a>
-                <a href="contact.html">Contact</a>
-                <a href="donate.html" class="donate-btn">Donate Now</a>
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
+<nav class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Destiny Toby Charity Foundation">
+        </a>
 
-    <!-------------- Impact section Js Libery ----------------------------->
-     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-     <script src="impactsection.js"></script>
+        <div class="nav-links" id="navLinks">
+            <!-- Cancel button inside the mobile menu -->
+            <button class="cancel-btn" id="cancelBtn" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="donate.html">Donate</a>
+            <a href="contact.html">Contact</a>
+            <a href="donate.html" class="donate-btn">Donate Now</a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
 
     <!-- Hero Section -->
     <section class="hero">
@@ -494,16 +498,27 @@
 
     <script>
 
-        // Mobile Navigation Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
+    // ----------------------Mobile Navigation Toggle
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const cancelBtn = document.getElementById('cancelBtn'); // Your cancel button
+
+    // Open/close menu with hamburger
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.innerHTML = navLinks.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+    });
+
+    // Close menu with cancel button
+    cancelBtn.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>'; // Reset icon
         
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
+    });
+
 
         // Testimonial Slider
         let currentTestimonial = 0;

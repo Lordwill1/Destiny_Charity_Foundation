@@ -506,19 +506,22 @@
 
     // Open/close menu with hamburger
     hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        hamburger.innerHTML = navLinks.classList.contains('active') 
-            ? '<i class="fas fa-times"></i>' 
+        const isActive = navLinks.classList.toggle('active');
+
+        // Lock or unlock scroll
+        document.body.classList.toggle('no-scroll', isActive);
+
+        hamburger.innerHTML = isActive
+            ? '<i class="fas fa-times"></i>'
             : '<i class="fas fa-bars"></i>';
     });
 
     // Close menu with cancel button
     cancelBtn.addEventListener('click', () => {
         navLinks.classList.remove('active');
+        document.body.classList.remove('no-scroll'); // Unlock scroll
         hamburger.innerHTML = '<i class="fas fa-bars"></i>'; // Reset icon
-        
     });
-
 
         // Testimonial Slider
         let currentTestimonial = 0;

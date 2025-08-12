@@ -1169,3 +1169,9 @@ body.no-scroll {
         z-index: 999;
     }
 }
+
+body.no-scroll {
+    overflow: hidden;
+    position: fixed; /* Prevent touch scroll on mobile */
+    width: 100%;
+}

@@ -1168,7 +1168,7 @@ a {
   color: white;
 }
 
-/* Loading Spinner Styles for Newsletter Button */
+/*<--------------Loading Spinner Styles for Newsletter Button------------------>*/
 .newsletter-form button {
     position: relative;
     display: flex;

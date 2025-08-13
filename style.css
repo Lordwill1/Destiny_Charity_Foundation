@@ -45,7 +45,6 @@ a {
     color: inherit;
 }
 
-
 .btn-primary {
     display: inline-block;
     background-color: var(--primary-color);
@@ -1021,7 +1020,22 @@ a {
         flex-direction: column;
         gap: 15px;
     }
-    
+
+/* ---------------DISABLED WITH A COMMENT COMMAND----------
+
+/* Join us today button on index file
+.center-button {
+    display: flex;
+    justify-content: center;
+}
+
+/* To style the link directly
+.btn-primary {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+*/
     .services-grid {
         grid-template-columns: 1fr;
     }
@@ -1131,76 +1145,102 @@ a {
     background: #10B981;
 }
 
-/* Snackbar base style */
-.snackbar {
-  visibility: hidden;
-  max-width: 350px;
-  margin-left: -125px;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  border-radius: 8px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1000;
-  left: 50%;
-  bottom: 50px;
-  font-size: 16px;
-  transition: visibility 0s, opacity 0.5s ease-in-out;
-  opacity: 0;
+body.no-scroll {
+    overflow: hidden;
 }
 
-/* Show animation */
-.snackbar.show {
-  visibility: visible;
-  opacity: 1;
+/* Hide cancel button by default (desktop) */
+#cancelBtn {
+    display: none;
 }
 
-/* Success state */
-.snackbar.success {
-  background-color:#10B981;
-  color: white;
+/* Show cancel button only on mobile */
+@media (max-width: 768px) {
+    #cancelBtn {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: white; /* adjust based on your menu style */
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 999;
+    }
 }
 
-/* Error state */
-.snackbar.error {
-  background-color: red;
-  color: white;
+body.no-scroll {
+    overflow: hidden;
+    position: fixed; /* Prevent touch scroll on mobile */
+    width: 100%;
 }
 
-/*<--------------Loading Spinner Styles for Newsletter Button------------------>*/
-.newsletter-form button {
+/* Slide Image */
+
+.img-comp-container {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 60px;
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    overflow: hidden;
 }
 
-.newsletter-form button:disabled {
-    cursor: not-allowed;
-    opacity: 0.7;
+.img-comp-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.loading-spinner {
-    width: 18px;
-    height: 18px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-top: 2px solid white;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    display: none;
-}
-
-.newsletter-form button.loading .loading-spinner {
+.img-comp-img img {
     display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.newsletter-form button.loading i {
-    display: none;
+.img-comp-overlay {
+    width: 50%;
+    overflow: hidden;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.img-comp-slider {
+    position: absolute;
+    z-index: 9;
+    cursor: ew-resize;
+    width: 40px;
+    height: 40px;
+    background-color: #2196F3;
+    opacity: 0.7;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img-comp-slider-line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: #2196F3;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 8;
+}
+
+@media (max-width: 600px) {
+    .img-comp-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 5/4;
+    }
+
+    /*---Prevent taking too much mobile space ---*/
+}
+@media (max-width: 600px) {
+    .img-comp-container {
+        max-height: 70vh; /* Optional: prevents taking too much screen space */
+    }
 }

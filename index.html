@@ -467,7 +467,10 @@
                     <p>Subscribe to our newsletter for updates on our work.</p>
                     <form id="newsletterForm" class="newsletter-form">
                         <input type="email"id="email" name="email" placeholder="Your email address" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" id="newsletterBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            <div class="loading-spinner"></div>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -548,19 +551,24 @@
 
             let email = document.getElementById("email").value;
             let snackbar = document.getElementById("snackbar");
+            let submitBtn = document.getElementById("newsletterBtn");
 
-            fetch("https://script.google.com/macros/s/AKfycby5S3bJSO9bxe3hvVbmveUiDgsQMYw7d1jyUHmIJg9VAXJ52Pz9VzfuI-CtFEYpWF5_tA/exec", {
+            // Start loading state
+            submitBtn.disabled = true;
+            submitBtn.classList.add("loading");
+
+            //ensure to update the url below when a new deployment is made.
+            fetch("https://script.google.com/macros/s/AKfycbzPmBZQ9_y7kFcUShAyuWP7aR53GKqEpE3ga3N0-CuN9lsEv1pDga9NKu8eftBrPzByZQ/exec", {
                 method: "POST",
                 body: new URLSearchParams({ email: email })
             })
             .then(response => response.text())
             .then(text => {
                 if (text.includes("Success")) {
-                    document.getElementById("email").value = ""; //the email field becomes empty
+                    document.getElementById("email").value = "";
                     snackbar.textContent = "You have successfully subscribed to our Newsletter";
                     snackbar.style.backgroundColor = "#10B981";
                     snackbar.style.color = "white";
-                    
                 } else {
                     throw new Error();
                 }
@@ -571,6 +579,11 @@
                 snackbar.style.backgroundColor = "red";
                 snackbar.style.color = "white";
                 showSnackbar();
+            })
+            .finally(() => {
+                // End loading state
+                submitBtn.disabled = false;
+                submitBtn.classList.remove("loading");
             });
 
             function showSnackbar() {

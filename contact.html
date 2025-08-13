@@ -6,6 +6,7 @@
     <title>Destiny Toby Charity Foundation | Contact Us</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <script>
         tailwind.config = {
             theme: {
@@ -267,6 +268,7 @@
                 <p>Copyright &copy; 2025 Destiny Toby Charity Foundation. All rights reserved.</p>
             </div>
         </div>
+        <div id="snackbar" class="snackbar"></div>
     </footer>
 
     <!-- Mobile Menu (hidden by default) -->
@@ -283,23 +285,63 @@
     </div>
 
     <script>
+         let snackbar = document.getElementById("snackbar");
+
         // Mobile menu toggle
         document.querySelector('nav button').addEventListener('click', function() {
             document.getElementById('mobileMenu').classList.toggle('hidden');
         });
 
         // Form submission handling
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzmY7HJmUEupsd8UBLj-aTxEsPcKQEWFYaxFA44IcIYrYCjanY1WcTF4zyKYXFQubtbTA/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzPmBZQ9_y7kFcUShAyuWP7aR53GKqEpE3ga3N0-CuN9lsEv1pDga9NKu8eftBrPzByZQ/exec'; //ensure to update url when a new deployment is made
         const form = document.forms['submit-googlesheet'];
+        const submitBtn = form.querySelector('button[type="submit"]');
         
         form.addEventListener('submit', e => {
             e.preventDefault();
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    alert("Thank you for your valuable feedback!");
+            
+            // Add loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>SENDING...';
+            
+            fetch(scriptURL, { 
+                method: 'POST', 
+                body: new FormData(form)
+            })
+            .then(response => response.text())
+            .then(text => {
+                if (text.includes("Success")) {
+                    snackbar.textContent = "Thank you for your valuable feedback! We'll get back to you soon";
+                    snackbar.style.backgroundColor = "#10B981";
+                    snackbar.style.color = "white";
+                    //alert("Thank you for your valuable feedback! We'll get back to you soon.");
+                  
                     form.reset();
-                })
-                .catch(error => console.error('Error!', error.message));
+                } else {
+                    throw new Error('Server error');
+                }
+                showSnackbar();
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                snackbar.textContent = "Sorry, there was an error sending your message. Please try again.";
+                snackbar.style.backgroundColor = "red";
+                snackbar.style.color = "white";
+                showSnackbar();
+                //alert("Sorry, there was an error sending your message. Please try again.");
+            })
+            .finally(() => {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'SEND MESSAGE';
+            });
+
+            function showSnackbar() {
+                snackbar.classList.add("show");
+                setTimeout(() => {
+                    snackbar.classList.remove("show");
+                }, 5000);
+            }
         });
     </script>
 </body>

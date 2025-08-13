@@ -1167,3 +1167,40 @@ a {
   background-color: red;
   color: white;
 }
+
+/* Loading Spinner Styles for Newsletter Button */
+.newsletter-form button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+}
+
+.newsletter-form button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.loading-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+.newsletter-form button.loading .loading-spinner {
+    display: block;
+}
+
+.newsletter-form button.loading i {
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

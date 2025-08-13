@@ -16,30 +16,40 @@
     <link rel="stylesheet" href="impactstyle.css">
 </head>
 <body>
+
+    <!-------------------- Impact section Js Libery -->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="impactsection.js"></script>
+
+    <script src="slideimage.js"></script>
     
     <!-- Navigation -->
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Destiny Toby Charity Foundation">
-            </a>
-            <div class="nav-links" id="navLinks">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="donate.html">Donate</a>
-                <a href="contact.html">Contact</a>
-                <a href="donate.html" class="donate-btn">Donate Now</a>
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
+<nav class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Destiny Toby Charity Foundation">
+        </a>
 
-    <!-------------- Impact section Js Libery ----------------------------->
-     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-     <script src="impactsection.js"></script>
+        <div class="nav-links" id="navLinks">
+            <!-- Cancel button inside the mobile menu -->
+            <button class="cancel-btn" id="cancelBtn" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="donate.html">Donate</a>
+            <a href="contact.html">Contact</a>
+            <a href="donate.html" class="donate-btn">Donate Now</a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
 
     <!-- Hero Section -->
     <section class="hero">
@@ -94,6 +104,10 @@
 
                 <h2>Help a Child Today</h2>
                 <p>Service to man is service to God. Destiny Toby Charity Foundation cares for needy children by empowering their caregivers to do their best work, with compassion, grace, integrity and excellence. Our end goal is to support children in Africa and see every child reach the potential that God has for them.</p>
+                
+                
+                <!---------------------DISABLED SECTION-------------------------------
+
                 <div class="impact-stats">
                     <div class="stat">
                         <span class="number" data-count="5000">500+</span>
@@ -104,9 +118,13 @@
                         <span class="label">Communities</span>
                     </div>
                 </div>
-                <a href="donate.html" class="btn-primary">Join Us Today</a>
+                    <div class="text-center">
+                        </div>
+                        <a href="donate.html" class="btn-primary">Join Us Today</a>
             </div>
         </div>
+    -->
+
     </div>
 </section>
 
@@ -208,6 +226,28 @@
             </div>
         </div>
     </section>
+
+    <!---------------------------- SLIDE IMAGE-------------------->
+
+<div align="center">
+    <h1 style="font-size: 18px;">See the Difference Your Support Makes</h1>
+    <p style="font-size: 12px;">Slide to see the impact of donations on children's lives:</p>
+</div>
+
+
+
+    <div class="img-comp-container">
+        <div class="img-comp-img">
+            <img src="images/back.jpg" alt="Before image">
+        </div>
+        <div class="img-comp-img img-comp-overlay">
+            <img src="images/slide1.jpg" alt="After image">
+        </div>
+        <div class="img-comp-slider-line"></div>
+        <div class="img-comp-slider"></div>
+    </div>
+
+    <script src="script.js"></script>
 
     <!-- Testimonials Section -->
 
@@ -329,7 +369,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meet Our Team | Destiny Toby Charity Foundationt</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"> <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
 </head>
 <body>
     <section class="team-section">
@@ -465,12 +505,9 @@
                 <div class="footer-newsletter">
                     <h3>Stay Updated</h3>
                     <p>Subscribe to our newsletter for updates on our work.</p>
-                    <form id="newsletterForm" class="newsletter-form">
-                        <input type="email"id="email" name="email" placeholder="Your email address" required>
-                        <button type="submit" id="newsletterBtn">
-                            <i class="fas fa-paper-plane"></i>
-                            <div class="loading-spinner"></div>
-                        </button>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
@@ -481,25 +518,38 @@
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
                 </div>
-              
             </div>
         </div>
-      <div id="snackbar" class="snackbar"></div>
     </footer>
-    
+
+    <script src="script.js"></script>
 
     <script>
 
-        // Mobile Navigation Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
+    // ----------------------Mobile Navigation Toggle
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const cancelBtn = document.getElementById('cancelBtn'); // Your cancel button
+
+    // Open/close menu with hamburger
+    hamburger.addEventListener('click', () => {
+        const isActive = navLinks.classList.toggle('active');
+
+        // Lock or unlock scroll
+        document.body.classList.toggle('no-scroll', isActive);
+
+        hamburger.innerHTML = isActive
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+    });
+
+    // Close menu with cancel button
+    cancelBtn.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        document.body.classList.remove('no-scroll'); // Unlock scroll
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>'; // Reset icon
+    });
 
         // Testimonial Slider
         let currentTestimonial = 0;
@@ -544,57 +594,6 @@
                 slideInterval = setInterval(nextTestimonial, 5000);
             });
         });
-
-        //Adding the user to google sheet on subscribing for newsletter
-        document.getElementById("newsletterForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            let email = document.getElementById("email").value;
-            let snackbar = document.getElementById("snackbar");
-            let submitBtn = document.getElementById("newsletterBtn");
-
-            // Start loading state
-            submitBtn.disabled = true;
-            submitBtn.classList.add("loading");
-
-            //ensure to update the url below when a new deployment is made.
-            fetch("https://script.google.com/macros/s/AKfycbw6Aphl46Uo77qWr0DAVA3C5TE5WXS7LwUt4dpF0nphRB0yWiaZrp8sPi9BlHM_O-BEYQ/exec", {
-                method: "POST",
-                body: new URLSearchParams({ email: email })
-            })
-            .then(response => response.text())
-            .then(text => {
-                if (text.includes("Success")) {
-                    document.getElementById("email").value = "";
-                    snackbar.textContent = "You have successfully subscribed to our Newsletter";
-                    snackbar.style.backgroundColor = "#10B981";
-                    snackbar.style.color = "white";
-                } else {
-                    throw new Error();
-                }
-                showSnackbar();
-            })
-            .catch(() => {
-                snackbar.textContent = "An error occurred, unable to subscribe to newsletter";
-                snackbar.style.backgroundColor = "red";
-                snackbar.style.color = "white";
-                showSnackbar();
-            })
-            .finally(() => {
-                // End loading state
-                submitBtn.disabled = false;
-                submitBtn.classList.remove("loading");
-            });
-
-            function showSnackbar() {
-                snackbar.classList.add("show");
-                setTimeout(() => {
-                    snackbar.classList.remove("show");
-                }, 5000);
-            }
-        });
-       
     </script>
-   
 </body>
 </html>

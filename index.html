@@ -530,7 +530,7 @@
 
     <script>
 
-    // ----------------------Mobile Navigation Toggle
+    // ----------------------Mobile Navigation Toggle -----------------------------------------------
 
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
@@ -558,7 +558,7 @@
         // Testimonial Slider
         let currentTestimonial = 0;
         const testimonials = document.querySelectorAll('.testimonial');
-        const dots = document.querySelectorAll('.dot');
+        const dots = document.querySelectorAll('.slider-dots .dot');
         
         function showTestimonial(index) {
             testimonials.forEach((testimonial, i) => {
@@ -599,7 +599,8 @@
             });
         });
 
-          //<----Adding the user to google sheet on subscribing for newsletter---->
+          //<--------------------Adding the user to google sheet on subscribing for newsletter----------------------->
+
         document.getElementById("newsletterForm").addEventListener("submit", function(event) {
             event.preventDefault();
 

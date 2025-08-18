@@ -96,126 +96,80 @@ a {
     margin: 0 auto 3rem;
 }
 
-/* ---------- Navigation (works with your HTML) ---------- */
+/* ---------------------------------------------Navigation----------------------------------- */
 .navbar {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: rgba(15, 23, 42, 0.9);
-  transition: var(--transition);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: var(--transition);
+    background-color: rgba(15, 23, 42, 0.9);
 }
 
 .navbar.scrolled {
-  background-color: rgba(15, 23, 42, 0.95);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    background-color: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 5px 120px rgba(0, 0, 0, 0.1);
 }
 
-/* Make the inner container do the layout */
-.navbar .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;   /* logo left, hamburger/right group right */
-  gap: 16px;
-  padding: 15px 20px;               /* adjust to your spacing */
-  max-width: 1200px;                /* optional: center overall width */
-  margin: 0 auto;                   /* optional: center overall width */
-}
-
-/* Logo */
 .logo img {
-  height: 45px;
-  transition: var(--transition);
+    height: 50px;
+    transition: var(--transition);
 }
 
-/* Links (desktop) */
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
 .nav-links a {
-  color: var(--white);
-  font-weight: 500;
-  text-decoration: none;
-  position: relative;
-  transition: var(--transition);
+    color: var(--white);
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
 }
 
 .nav-links a:hover,
-.nav-links a.active { color: var(--primary-color); }
+.nav-links a.active {
+    color: var(--primary-color);
+}
 
 .nav-links a.active::after {
-  content: "";
-  position: absolute;
-  bottom: -5px; left: 0;
-  width: 100%; height: 2px;
-  background: var(--primary-color);
-}
-
-/* Donate button */
-.donate-btn {
-  background: var(--primary-color);
-  color: var(--white);
-  padding: 10px 25px;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: var(--transition);
-}
-.donate-btn:hover {
-  background: var(--primary-dark);
-  transform: translateY(-3px);
-  box-shadow: var(--box-shadow);
-}
-
-/* Hamburger (hidden on desktop, appears on mobile at far right) */
-.hamburger {
-  display: none;
-  background: none;
-  border: 0;
-  color: var(--white);
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-/* Mobile menu */
-#cancelBtn { display: none; } /* hide on desktop */
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;                 /* hidden until opened */
-    position: fixed;
-    inset: 0;                      /* full-screen overlay */
-    background: rgba(15, 23, 42, 0.97);
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 96px;             /* space for close button/top bar */
-    gap: 22px;
-    z-index: 1100;
-  }
-  .nav-links.active { display: flex; }
-
-  .hamburger { display: block; margin-left: auto; }
-
-  /* Show cancel button on mobile, top-right inside overlay */
-  #cancelBtn {
-    display: block;
+    content: '';
     position: absolute;
-    top: 16px; right: 16px;
-    background: none;
-    border: 0;
-    font-size: 1.8rem;
-    color: #fff;
-    cursor: pointer;
-  }
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
 }
 
-/* Prevent stray horizontal scroll on mobile */
-html, body { overflow-x: hidden; }
-body.no-scroll { overflow: hidden; position: fixed; width: 100%; }
+.donate-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+}
 
+.donate-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 
 /* Hero Section */
 .hero {
@@ -1156,34 +1110,6 @@ body.no-scroll { overflow: hidden; position: fixed; width: 100%; }
     }
 }
 
-
-/* Hide cancel button by default (desktop) */
-#cancelBtn {
-    display: none;
-}
-
-/* Show cancel button only on mobile */
-@media (max-width: 768px) {
-    #cancelBtn {
-        display: block;
-        background: none;
-        border: none;
-        font-size: 1.8rem;
-        color: white; /* adjust based on your menu style */
-        cursor: pointer;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        z-index: 999;
-    }
-}
-
-body.no-scroll {
-    overflow: hidden;
-    position: fixed; /* Prevent touch scroll on mobile */
-    width: 100%;
-}
-
 /* Testimonial Slider Styles */
 .testimonial {
     display: none;
@@ -1221,6 +1147,33 @@ body.no-scroll {
 
 body.no-scroll {
     overflow: hidden;
+}
+
+/* Hide cancel button by default (desktop) */
+#cancelBtn {
+    display: none;
+}
+
+/* Show cancel button only on mobile */
+@media (max-width: 768px) {
+    #cancelBtn {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: white; /* adjust based on your menu style */
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 999;
+    }
+}
+
+body.no-scroll {
+    overflow: hidden;
+    position: fixed; /* Prevent touch scroll on mobile */
+    width: 100%;
 }
 
 /* Slide Image */
@@ -1290,4 +1243,78 @@ body.no-scroll {
     .img-comp-container {
         max-height: 70vh; /* Optional: prevents taking too much screen space */
     }
+}
+
+/* Snackbar base style */
+.snackbar {
+  visibility: hidden;
+  max-width: 350px;
+  margin-left: -125px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  bottom: 50px;
+  font-size: 16px;
+  transition: visibility 0s, opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+/* Show animation */
+.snackbar.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Success state */
+.snackbar.success {
+  background-color:#10B981;
+  color: white;
+}
+
+/* Error state */
+.snackbar.error {
+  background-color: red;
+  color: white;
+}
+
+/*<--------------Loading Spinner Styles for Newsletter Button------------------>*/
+.newsletter-form button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+}
+
+.newsletter-form button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.loading-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+.newsletter-form button.loading .loading-spinner {
+    display: block;
+}
+
+.newsletter-form button.loading i {
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

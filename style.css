@@ -96,82 +96,127 @@ a {
     margin: 0 auto 3rem;
 }
 
-/* ---------------------------------------------Navigation----------------------------------- */
+/* ---------- Navigation (works with your HTML) ---------- */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 0;
-    z-index: 1000;
-    transition: var(--transition);
-    background-color: rgba(15, 23, 42, 0.9);
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(15, 23, 42, 0.9);
+  transition: var(--transition);
 }
 
 .navbar.scrolled {
-    padding: 15px 0;
-    background-color: rgba(15, 23, 42, 0.95);
-    box-shadow: 0 5px 120px rgba(0, 0, 0, 0.1);
+  background-color: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
+/* Make the inner container do the layout */
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;    /* keep a little breathing room */
+  max-width: 100%;  /* let it stretch full width */
+  margin: 0;        /* remove centering */
+}
+
+/* Logo */
 .logo img {
-    height: 50px;
-    transition: var(--transition);
+  height: 55px;
+  transition: var(--transition);
 }
 
+/* Links (desktop) */
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 .nav-links a {
-    color: var(--white);
-    font-weight: 500;
-    transition: var(--transition);
-    position: relative;
+  color: var(--white);
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  transition: var(--transition);
 }
 
 .nav-links a:hover,
-.nav-links a.active {
-    color: var(--primary-color);
-}
+.nav-links a.active { color: var(--primary-color); }
 
 .nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--primary-color);
+  content: "";
+  position: absolute;
+  bottom: -5px; left: 0;
+  width: 100%; height: 2px;
+  background: var(--primary-color);
 }
 
+/* Donate button */
 .donate-btn {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 10px 25px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: var(--transition);
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: var(--transition);
 }
-
 .donate-btn:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-3px);
-    box-shadow: var(--box-shadow);
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow);
 }
 
+/* Hamburger (hidden on desktop, appears on mobile at far right) */
 .hamburger {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--white);
-    font-size: 1.5rem;
-    cursor: pointer;
+  display: none;
+  background: none;
+  border: 0;
+  color: var(--white);
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
-/* Hero Section */
+/* Mobile menu */
+#cancelBtn { display: none; } /* hide on desktop */
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;                 /* hidden until opened */
+    position: fixed;
+    inset: 0;                      /* full-screen overlay */
+    background: rgba(15, 23, 42, 0.97);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 96px;             /* space for close button/top bar */
+    gap: 22px;
+    z-index: 1100;
+  }
+  .nav-links.active { display: flex; }
+
+  .hamburger { display: block; margin-left: auto; }
+
+  /* Show cancel button on mobile, top-right inside overlay */
+  #cancelBtn {
+    display: block;
+    position: absolute;
+    top: 16px; right: 16px;
+    background: none;
+    border: 0;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+/* Prevent stray horizontal scroll on mobile */
+html, body { overflow-x: hidden; }
+body.no-scroll { overflow: hidden; position: fixed; width: 100%; }
+
+
+/* ---------------------------------------Hero Section------------------------------------------------------- */
 .hero {
     height: 100vh;
     min-height: 700px;

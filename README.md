@@ -1,4 +1,4 @@
-# Destiny Toby Foundation --Donation-Website
+# Destiny Toby Foundation -Donation-Website
 Destiny Toby Foundation Website with integrated payment gateway using Remita.
 
 ## About Destiny Toby Charity Foundation

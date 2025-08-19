@@ -360,98 +360,189 @@
     </section>
 
 <!-- Meet the team -->
-
-    <section class="team-section">
-        <h2>Meet Our Team</h2>
-        <p class="subtitle">The passionate professionals who make our mission possible</p>
-        
-        <div class="row">
-            <div class="column">
-                <div class="card">
-                    <img src="images/founder.jpg" alt="Rev. Fr. Ben Ubanii">
-                    <div class="container">
-                        <h2>Rev. Fr. Ben Ubanii</h2>
-                        <p class="title">CEO & Founder</p>
-                        <p>Our mission is rooted in faith and service. At Destiny Toby Charity Foundation, I see every act of kindness as a seed for a better tomorrow.</p>
-                        <p>sarah@gmail.com</p>
-                        <p><button class="button">Contact</button></p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-whatsapp"></i></a>
-                            <a href="#"><i class="fab fa-facebook-square"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
+<section class="team-section">
+    <h2>Meet Our Team</h2>
+    <p class="subtitle">The passionate professionals who make our mission possible</p>
+    
+    <div class="row" id="teamMembers" style="display: none;">
+        <!-- All team members (hidden by default) -->
+        <div class="column">
+            <div class="card">
+                <img src="images/founder.jpg" alt="Rev. Fr. Ben Ubanii">
+                <div class="container">
+                    <h2>Rev. Fr. Ben Ubanii</h2>
+                    <p class="title">CEO & Founder</p>
+                    <p>Our mission is rooted in faith and service. At Destiny Toby Charity Foundation, I see every act of kindness as a seed for a better tomorrow.</p>
+                    <p>sarah@gmail.com</p>
+                    <p><button class="button">Contact</button></p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
                     </div>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="card">
-                    <img src="images/founder2.jpg" alt="Ikenna Ubanii">
-                    <div class="container">
-                        <h2>Ikenna Ubanii</h2>
-                        <p class="title">Program Director</p>
-                        <p>Ikenna Ubanii oversees our global initiatives, ensuring resources reach the communities that need them most.</p>
-                        <p>michael@gmail.org</p>
-                        <p><button class="button">Contact</button></p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-whatsapp"></i></a>
-                            <a href="#"><i class="fab fa-facebook-square"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="card">
-                    <img src="images/founder3.jpg" alt="Odinakachi Emma-Osuji">
-                    <div class="container">
-                        <h2>Odinakachi Emma-Osuji</h2>
-                        <p class="title">Development Director</p>
-                        <p>Amina leads our fundraising efforts and builds partnerships to maximize our impact.</p>
-                        <p>amina@gmail.org</p>
-                        <p><button class="button">Contact</button></p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-whatsapp"></i></a>
-                            <a href="#"><i class="fab fa-facebook-square"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-                        <div class="column">
-                <div class="card">
-                    <img src="images/founder3.jpg" alt="Dr Ogechi Bethel-Eke">
-                    <div class="container">
-                        <h2>Dr Ogechi Bethel-Eke</h2>
-                        <p class="title">Field Operations</p>
-                        <p>Dr Ogechi Bethel-Eke coordinates our on-the-ground efforts, working directly with communities we serve..</p>
-                        <p>amina@gmail.org</p>
-                        <p><button class="button">Contact</button></p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-whatsapp"></i></a>
-                            <a href="#"><i class="fab fa-facebook-square"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
                 </div>
             </div>
         </div>
-    </section>
 
-    <script>
-        // Simple script to handle button clicks
-        document.querySelectorAll('.button').forEach(button => {
-            button.addEventListener('click', function() {
-                const email = this.parentElement.previousElementSibling.textContent;
-                alert(`Contacting ${email}`);
-            });
+        <div class="column">
+            <div class="card">
+                <img src="images/founder2.jpg" alt="Ikenna Ubanii">
+                <div class="container">
+                    <h2>Ikenna Ubanii</h2>
+                    <p class="title">Program Director</p>
+                    <p>Ikenna Ubanii oversees our global initiatives, ensuring resources reach the communities that need them most.</p>
+                    <p>michael@gmail.org</p>
+                    <p><button class="button">Contact</button></p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="images/founder3.jpg" alt="Odinakachi Emma-Osuji">
+                <div class="container">
+                    <h2>Odinakachi Emma-Osuji</h2>
+                    <p class="title">Development Director</p>
+                    <p>Amina leads our fundraising efforts and builds partnerships to maximize our impact.</p>
+                    <p>amina@gmail.org</p>
+                    <p><button class="button">Contact</button></p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="images/founder3.jpg" alt="Dr Ogechi Bethel-Eke">
+                <div class="container">
+                    <h2>Dr Ogechi Bethel-Eke</h2>
+                    <p class="title">Field Operations</p>
+                    <p>Dr Ogechi Bethel-Eke coordinates our on-the-ground efforts, working directly with communities we serve.</p>
+                    <p>amina@gmail.org</p>
+                    <p><button class="button">Contact</button></p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Expand Button -->
+    <div class="expand-button-container">
+        <button id="expandButton" class="expand-button">Show Team Members <i class="fas fa-chevron-down"></i></button>
+    </div>
+</section>
+
+<style>
+    .expand-button-container {
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    .expand-button {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .expand-button:hover {
+        background: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: var(--box-shadow);
+    }
+    
+    .expand-button i {
+        transition: transform 0.3s ease;
+    }
+    
+    .expand-button.expanded i {
+        transform: rotate(180deg);
+    }
+    
+    /* Animation for showing team members */
+    #teamMembers {
+        animation: fadeIn 0.5s ease-out;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<script>
+    // Expand/Collapse functionality
+    document.getElementById('expandButton').addEventListener('click', function() {
+        const teamMembers = document.getElementById('teamMembers');
+        const button = this;
+        
+        if (teamMembers.style.display === 'none') {
+            teamMembers.style.display = 'flex';
+            button.innerHTML = 'Hide Team Members <i class="fas fa-chevron-down"></i>';
+            button.classList.add('expanded');
+        } else {
+            teamMembers.style.display = 'none';
+            button.innerHTML = 'Show Team Members <i class="fas fa-chevron-down"></i>';
+            button.classList.remove('expanded');
+        }
+    });
+
+    // Contact button functionality
+    document.querySelectorAll('.button').forEach(button => {
+        button.addEventListener('click', function() {
+            const email = this.parentElement.previousElementSibling.textContent;
+            alert(`Contacting ${email}`);
         });
-    </script>
+    });
+</script>
+
+<script>
+    // Expand/Collapse functionality
+    document.getElementById('expandButton').addEventListener('click', function() {
+        const additionalTeam = document.querySelectorAll('.additional-team');
+        const button = this;
+        
+        additionalTeam.forEach(item => {
+            if (item.style.display === 'none') {
+                item.style.display = 'block';
+                button.innerHTML = 'Show Less Team Members <i class="fas fa-chevron-down"></i>';
+                button.classList.add('expanded');
+            } else {
+                item.style.display = 'none';
+                button.innerHTML = 'View More Team Members <i class="fas fa-chevron-down"></i>';
+                button.classList.remove('expanded');
+            }
+        });
+    });
+
+    // Contact button functionality
+    document.querySelectorAll('.button').forEach(button => {
+        button.addEventListener('click', function() {
+            const email = this.parentElement.previousElementSibling.textContent;
+            alert(`Contacting ${email}`);
+        });
+    });
+</script>
 
     <!-- Footer -->
     <footer class="footer">
